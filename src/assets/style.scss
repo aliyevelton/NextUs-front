@@ -1,0 +1,36 @@
+// TODO --------- ABSTRACTS ---------
+@import "./sass/abstracts/colors";
+
+// TODO --------- BASE ---------
+@import "./sass/base/reset";
+@import "./sass/base/typography";
+
+// TODO --------- COMPONENTS ---------
+@import "./sass/components/serviceCard";
+@import "./sass/components/testimonialCard";
+@import "./sass/components/authLogin";
+@import "./sass/components/authRegister";
+@import "./sass/components/searchResults";
+@import "./sass/components/card";
+@import "./sass/components/categories";
+@import "./sass/components/pageHeader";
+@import "./sass/components/modal";
+@import "./sass/components/tooltip";
+@import "./sass/components/postCard";
+@import "./sass/components/customizations";
+
+// TODO --------- LAYOUT ---------
+@import "./sass/layout/footer";
+@import "./sass/layout/header";
+
+// TODO --------- PAGES ---------
+@import "./sass/pages/home";
+@import "./sass/pages/login";
+@import "./sass/pages/register";
+@import "./sass/pages/requirements";
+@import "./sass/pages/error";
+@import "./sass/pages/collection";
+@import "./sass/pages/contactUs";
+@import "./sass/pages/application";
+@import "./sass/pages/profile";
+@import "./sass/pages/sharePost";

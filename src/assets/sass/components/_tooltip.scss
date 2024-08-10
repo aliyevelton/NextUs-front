@@ -1,0 +1,21 @@
+.tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: $purple-color-1;
+  position: absolute;
+  color: $white-color;
+  color: $card-color-1;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+.tooltip-active {
+  opacity: 1;
+  transform: translateY(0);
+}

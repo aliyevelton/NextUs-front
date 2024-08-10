@@ -1,0 +1,23 @@
+.page__header-top {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  .page__header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    h1 {
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    p {
+      color: $text-color-3;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+}

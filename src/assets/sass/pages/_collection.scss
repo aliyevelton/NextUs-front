@@ -1,0 +1,40 @@
+#collection {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .collection__container {
+    width: 80%;
+    display: flex;
+    min-height: 350px;
+    flex-direction: column;
+    gap: 48px;
+    .collection__bottom {
+      display: flex;
+      .collection__cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 72px;
+        align-items: end;
+        .collection__cards-container {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 24px;
+          .error {
+            background-color: rebeccapurple;
+          }
+        }
+        > button {
+          border: 1px solid $purple-color-1;
+          color: $purple-color-1;
+          background-color: transparent;
+        }
+      }
+    }
+    .active-container {
+      gap: 24px;
+    }
+  }
+}

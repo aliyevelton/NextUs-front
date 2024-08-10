@@ -1,0 +1,145 @@
+#share-post {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .share-post__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 92px;
+    .share-post__top {
+      display: flex;
+      gap: 28px;
+      span {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: $purple-color-1;
+      }
+      .share-post__header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h1 {
+          font-size: 36px;
+          font-style: normal;
+          font-weight: 510;
+        }
+        p {
+          color: $text-color-1;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+        }
+      }
+    }
+    .share-post__bottom {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .MuiFormControl-root {
+          label {
+            font-family: $primary-font;
+          }
+          .MuiInputBase-root {
+            width: 277px;
+            border-radius: 6px;
+            font-family: $primary-font;
+            .MuiSelect-select {
+              padding: 12px 0px 12px 52px;
+            }
+            svg {
+              display: none;
+            }
+          }
+          &:last-child {
+            .MuiInputBase-root {
+              width: 392px;
+              .MuiInputBase-input {
+                padding: 16px !important;
+              }
+            }
+          }
+          > svg {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 16px;
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+      .share-post__textarea {
+        margin-top: 56px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .share-post__textarea-header {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          h1 {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 510;
+          }
+          p {
+            color: $text-color-1;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+          }
+        }
+        .share-post__textarea-letter {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          p {
+            text-align: end;
+            color: $text-color-10;
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+        .MuiFormControl-root {
+          border-radius: 6px;
+          label {
+            font-family: $primary-font !important;
+          }
+          .MuiInputBase-root {
+            font-family: $primary-font !important;
+            textarea {
+              height: 300px !important  ;
+            }
+          }
+        }
+      }
+      button {
+        margin-top: 72px;
+        background-color: $purple-color-1;
+        color: $white-color;
+        border-color: $purple-color-1;
+      }
+    }
+  }
+}
+
+.MuiPaper-root {
+  ul {
+    li {
+      font-family: $primary-font !important;
+    }
+  }
+}

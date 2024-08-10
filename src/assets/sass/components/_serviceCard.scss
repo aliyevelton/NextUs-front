@@ -1,0 +1,32 @@
+.service__card {
+  display: flex;
+  flex-direction: column;
+  background-color: $card-color-1;
+  border-radius: 15px;
+  gap: 16px;
+  padding: 32px 16px 32px 24px;
+  span {
+    width: 46px;
+    height: 46px;
+    background-color: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  .service__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    h1 {
+      color: $black-color;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    p {
+      color: $text-color-2;
+      font-size: 14px;
+      line-height: normal;
+    }
+  }
+}

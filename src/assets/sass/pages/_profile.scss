@@ -1,0 +1,259 @@
+#profile {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .profile__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    .profile__background {
+      position: relative;
+      img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+      }
+      .profile__background-select {
+        position: absolute;
+        top: 28px;
+        right: 28px;
+      }
+      label {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        background-color: $card-color-1;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        transition: 0.4s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      input {
+        display: none;
+      }
+    }
+    .profile__picture {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-left: 56px;
+      margin-top: -120px;
+      z-index: 1;
+      border: 6px solid $white-color;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      label {
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        position: absolute;
+        transition: 0.4s;
+        &:hover {
+          opacity: 0.7;
+        }
+        span {
+          width: 48px;
+          height: 48px;
+          background-color: $border-color-1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+        }
+        input {
+          display: none;
+        }
+      }
+    }
+    .profile__header {
+      display: flex;
+      justify-content: space-between;
+      .profile__left {
+        margin-top: 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .profile__info {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          .profile__explanation {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            color: $border-color-5;
+            font-style: normal;
+            h1 {
+              font-size: 36px;
+              font-weight: 500;
+            }
+            p {
+              font-size: 24px;
+              font-weight: 400;
+            }
+          }
+          > p {
+            color: $purple-color-1;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+          }
+        }
+        a {
+          width: fit-content;
+          button {
+            background-color: $purple-color-1;
+            border-color: $purple-color-1;
+            color: $white-color;
+          }
+        }
+      }
+      .profile__right {
+        position: relative;
+        display: flex;
+        padding: 28px 16px;
+        background-color: $card-color-1;
+        border-radius: 6px;
+        gap: 104px;
+        height: fit-content;
+        .profile__share {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          h1 {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+          }
+          p {
+            max-width: 300px;
+            word-wrap: break-word;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+          }
+        }
+        .tooltip {
+          right: -26px;
+          top: -24px;
+        }
+        span {
+          cursor: pointer;
+          transition: 0.4s;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+    .profile__about {
+      display: grid;
+      grid-template-columns: 1fr 48px;
+      margin-top: 68px;
+      padding: 42px 32px 42px 24px;
+      background-color: $card-color-1;
+      border-radius: 6px;
+      .profile__about-me {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        h1 {
+          color: $border-color-5;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+        p {
+          color: $border-color-5;
+          font-size: 20px;
+          font-style: normal;
+          word-break: break-all;
+          font-weight: 400;
+        }
+        .profile__about-edit {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          align-items: end;
+          .MuiFormControl-root {
+            width: 100%;
+            font-family: $primary-font;
+            label {
+              font-family: $primary-font;
+              padding-right: 5px;
+              background-color: $card-color-1;
+            }
+            textarea {
+              font-family: $primary-font;
+            }
+            .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+              color: $purple-color-1;
+            }
+            .Mui-focused {
+              .MuiOutlinedInput-notchedOutline {
+                border-color: $purple-color-1;
+              }
+            }
+            .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
+              border-radius: 8px;
+            }
+            input {
+              font-family: $primary-font !important;
+            }
+          }
+          button {
+            background-color: $purple-color-1;
+            border-color: $purple-color-1;
+            color: $white-color;
+          }
+        }
+      }
+      span {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background-color: $white-color;
+        transition: 0.4s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .profile__bookings {
+      padding: 100px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      .profile__bookings-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+          color: $border-color-5;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 510;
+          line-height: normal;
+        }
+      }
+      .profile__bookings-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    }
+  }
+}
