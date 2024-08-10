@@ -291,7 +291,13 @@ function Requirements({ userData }) {
               <h1>{name.slice(0,-1)} Description</h1>
               <ul className="requirements__row-fields">
                 <li>{detailedData?.detail.description}</li>
+                
               </ul>
+              <br></br><DefaultBtn>
+              <a href={`https://aliyevelton-001-site1.ltempurl.com/files/courseSyllabus/${detailedData?.detail.syllabus}`} target="_blank" rel="noopener noreferrer">
+                    View Syllabus
+              </a>
+              </DefaultBtn>
             </div>
           </div>
         </div>

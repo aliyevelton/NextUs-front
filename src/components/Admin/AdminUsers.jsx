@@ -52,6 +52,99 @@ export default function AdminUsers({userData}) {
 
     return (
         <>
+            <style>
+                {`
+                #adminContainer {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 20px;
+                }
+
+                #insideContainer {
+                    flex: 1;
+                    padding: 20px;
+                }
+
+                button {
+                    padding: 8px 12px;
+                    border: none;
+                    border-radius: 4px;
+                    color: #fff;
+                    cursor: pointer;
+                    font-size: 0.9em;
+                    margin: 5px;
+                    transition: background-color 0.3s;
+                }
+
+                .createBtn {
+                    background-color: #28a745; /* Green for Create */
+                }
+
+                .createBtn:hover {
+                    background-color: #218838;
+                }
+
+                .changeRoleBtn {
+                    background-color: #ffc107; /* Yellow for Change Role */
+                }
+
+                .changeRoleBtn:hover {
+                    background-color: #e0a800;
+                }
+
+                .detailBtn {
+                    background-color: #007bff; /* Blue for Detail */
+                }
+
+                .detailBtn:hover {
+                    background-color: #0056b3;
+                }
+
+                .deactivateBtn {
+                    background-color: #dc3545; /* Red for Deactivate */
+                }
+
+                .deactivateBtn:hover {
+                    background-color: #c82333;
+                }
+
+                .activateBtn {
+                    background-color: #17a2b8; /* Teal for Activate */
+                }
+
+                .activateBtn:hover {
+                    background-color: #138496;
+                }
+
+                #adminTable {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                }
+
+                #adminTable th, #adminTable td {
+                    border: 1px solid #ddd;
+                    padding: 10px;
+                }
+
+                #adminTable th {
+                    background-color: #f4f4f4;
+                    text-align: left;
+                }
+
+                .jobs {
+                    transition: background-color 0.3s;
+                }
+
+                .jobs:hover {
+                    background-color: #f1f1f1;
+                }
+
+                .actions button {
+                    margin-right: 5px;
+                }
+                `}
+            </style>
             <div id="adminContainer">
                 <AdminSidebar></AdminSidebar>
                 <div id="insideContainer">
@@ -98,9 +191,11 @@ export default function AdminUsers({userData}) {
                                     <td>{finalRole}</td>
                                     <td>{user.isActive ? "Active" : "Non Active"}</td>
                                     <td className="actions">
-                                        <button onClick={() => navigate(`/admin/roleupdate/${user.id}`)}>Change Role</button>
-                                        <button onClick={() => navigate(`/u/${user.userName}`)}>Detail</button>
-                                        <button onClick={() => handleStatus(index, user.id)}>{user.isActive ? "Deactivate" : "Activate"}</button>
+                                        <button className="changeRoleBtn" onClick={() => navigate(`/admin/roleupdate/${user.id}`)}>Change Role</button>
+                                        <button className="detailBtn" onClick={() => navigate(`/u/${user.userName}`)}>Detail</button>
+                                        <button className={user.isActive ? "deactivateBtn" : "activateBtn"} onClick={() => handleStatus(index, user.id)}>
+                                            {user.isActive ? "Deactivate" : "Activate"}
+                                        </button>
                                     </td>
                                 </tr>
                             })}

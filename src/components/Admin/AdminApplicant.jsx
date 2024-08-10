@@ -4,51 +4,105 @@ import AdminHeader from "./AdminHeader";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function AdminApplicant({ setCollection ,collection, userData }) {
-    // const [isAdmin, setIsAdmin] = useState(false);
-
+export default function AdminApplicant({ setCollection, collection, userData }) {
     const navigate = useNavigate();
 
-    useEffect(() =>{
+    useEffect(() => {
         async function fetchData() {
             const response = await axios.get("https://aliyevelton-001-site1.ltempurl.com/api/JobApplications");
             setCollection(response.data);
         }
         fetchData();
-    },[setCollection])
+    }, [setCollection]);
 
-    async function handleDelete(id){
+    async function handleDelete(id) {
         try {
             const response = confirm("Are you sure?");
-            if (response){
-                axios.delete(`https://aliyevelton-001-site1.ltempurl.com/api/Jobs?id=${id}`);
-                let updatedColl = collection.filter((coll) =>{
-                    return coll.id != id;
-                });
+            if (response) {
+                await axios.delete(`https://aliyevelton-001-site1.ltempurl.com/api/Jobs?id=${id}`);
+                let updatedColl = collection.filter((coll) => coll.id !== id);
                 setCollection(updatedColl);
             }
         } catch (error) {
-            console.log(error); 
+            console.log(error);
         }
     }
 
-    // const logoStyle = {
-    //     width: '50px', // Adjust as needed
-    //     height: '50px', // Adjust as needed
-    //     borderRadius: '50%',
-    //     objectFit: 'cover',
-    //     border: '1px solid #ddd' // Optional: adds a border around the logo
-    // };
-
-    console.log(collection);
-    
     return (
         <>
+            <style>
+                {`
+                    #adminContainer {
+                        display: flex;
+                        height: 100vh;
+                    }
+
+                    #insideContainer {
+                        margin-left: 250px; /* Adjust to match the sidebar width */
+                        padding: 20px;
+                        flex: 1;
+                        overflow-y: auto;
+                    }
+
+                    button {
+                        margin: 10px;
+                        padding: 10px 15px;
+                        border: none;
+                        border-radius: 5px;
+                        color: white;
+                        cursor: pointer;
+                        font-size: 16px;
+                        transition: background-color 0.3s ease;
+                    }
+
+                    .redBtn {
+                        background-color: #dc3545; /* Red color for delete */
+                    }
+
+                    .redBtn:hover {
+                        background-color: #c82333; /* Darker red for hover */
+                    }
+
+                    .blueBtn {
+                        background-color: #007bff; /* Blue color for detail */
+                    }
+
+                    .blueBtn:hover {
+                        background-color: #0056b3; /* Darker blue for hover */
+                    }
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-top: 20px;
+                    }
+
+                    th, td {
+                        padding: 15px;
+                        text-align: left;
+                        border-bottom: 1px solid #ddd;
+                    }
+
+                    th {
+                        background-color: #f8f9fa;
+                        color: #343a40;
+                    }
+
+                    tbody tr:hover {
+                        background-color: #f1f1f1;
+                    }
+
+                    #adminTable {
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                `}
+            </style>
+
             <div id="adminContainer">
-                <AdminSidebar></AdminSidebar>
+                <AdminSidebar />
                 <div id="insideContainer">
-                    <AdminHeader userData={userData}></AdminHeader>
-                    <button onClick={() => navigate("/admin/jobs/create")}>Create</button>
+                    <AdminHeader userData={userData} />
                     <table id="adminTable">
                         <thead>
                             <tr>

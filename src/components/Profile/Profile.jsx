@@ -14,7 +14,7 @@ function Profile({ userData, publicPp }) {
   const [publicData, setPublicData] = useState({});
 
   const [copiedText, setCopiedText] = useState({
-    value: "www.linkedin.com/in/salam-61a782298",
+    value: window.location.href,
     copied: false,
   });
 

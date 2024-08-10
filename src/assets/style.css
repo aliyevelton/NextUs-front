@@ -3468,3 +3468,21 @@ header .header__container .hamburger-react {
   background-color: #6875d1;
   color: white;
 }
+
+.header__controls .logout-button {
+  background-color: #F9F9F9; /* Example color */
+  color: white;
+  border: none;
+  padding: 15px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+
+
+.logout-button svg {
+  width: 24px;
+  height: 24px;
+  fill: black; /* Change to the color you want */
+}
+

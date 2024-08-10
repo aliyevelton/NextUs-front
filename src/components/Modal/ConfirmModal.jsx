@@ -49,8 +49,7 @@ function ConfirmModal({ collection, userData, inputs, setActiveModal }) {
         <h1>Are these correct?</h1>
         <p>
           Make sure that the information you entered is correct for the job
-          application. You have a chance to change inputs for “UX/UI Designer”
-          job vacancy.
+          application. You have a chance to change inputs.
         </p>
       </div>
       <div className="modal__container-rows">
@@ -59,9 +58,6 @@ function ConfirmModal({ collection, userData, inputs, setActiveModal }) {
         </div>
         <div className="modal__container-row">
           Email: <p>{inputs.email}</p>
-        </div>
-        <div className="modal__container-row">
-          Salary Expectation: <p>$1200-1800</p>
         </div>
       </div>
       <div className="modal__container-buttons">

@@ -6,12 +6,21 @@ export default function AdminSidebar() {
         <>
             <style>
                 {`
+                    body {
+                        margin: 0;
+                        font-family: Arial, sans-serif;
+                    }
+
                     #sidebar {
                         width: 250px;
                         background-color: #343a40;
                         height: 100vh;
                         padding: 20px;
                         color: white;
+                        position: fixed; /* Fix the sidebar to the left */
+                        top: 0;
+                        left: 0;
+                        overflow-y: auto; /* Allows vertical scrolling if content overflows */
                         display: flex;
                         flex-direction: column;
                     }
@@ -69,6 +78,13 @@ export default function AdminSidebar() {
                     #sideContents a:hover {
                         background-color: #495057;
                     }
+
+                    /* Ensure the main content area is not covered by the sidebar */
+                    #mainContent {
+                        margin-left: 250px; /* Margin equal to the width of the sidebar */
+                        padding: 20px;
+                        overflow-y: auto; /* Allows vertical scrolling if content overflows */
+                    }
                 `}
             </style>
 
@@ -86,6 +102,11 @@ export default function AdminSidebar() {
                     <NavLink to={"/admin/users"}>Users</NavLink>
                     <NavLink to={"/admin/applicants"}>Job Applicants</NavLink>
                 </div>
+            </div>
+
+            {/* Main Content Area */}
+            <div id="mainContent">
+                {/* Add your main content here */}
             </div>
         </>
     );

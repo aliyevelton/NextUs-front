@@ -29,6 +29,8 @@ function ProfileContent({
 
   let name = path[path.length - 1];
 
+  const showUrl = location.pathname === "/company" && location.search.includes("?");
+
   return (
     <div className="profile__content">
       <div className="profile__background">
@@ -82,15 +84,15 @@ function ProfileContent({
           <div className="profile__info">
             <div className="profile__explanation">
               <h1>{userData.name} {userData.surname}</h1>
-              <p>{userData.profession || 'Add Profession'}</p>
+              <p>{userData.profession}</p>
             </div>
-            <p className="profile__connection">100+ network</p>
+            <p className="profile__connection"></p>
           </div>
         </div>
         <div className="profile__right">
           <div className="profile__share">
             <h1>Public profile & URL</h1>
-            <p>{window.location.origin}/u/{userData.userName}</p>
+            <p>{showUrl ? window.location.href : `${window.location.origin}/u/${userData.userName}`}</p>
           </div>
 
           <div className={`tooltip ${tooltipActive ? "tooltip-active" : ""}`}>
